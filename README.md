@@ -51,9 +51,9 @@ I will proceed using syntax for macOS/Linux since that's what I'm developing on,
 
 Run the main ETL pipeline script:
 
-    ```bash
-    python3 src/etl_pipeline.py
-    ```
+```bash
+python3 src/etl_pipeline.py
+```
 
 This script will:
 	- Fetch user data.
@@ -64,9 +64,9 @@ This script will:
 
 To inspect data at various stages, run the test script:
 
-    ```bash
-    python tests/test_etl_pipeline.py
-    ```
+```bash
+python tests/test_etl_pipeline.py
+```
 
 The test script prints sample data from each pipeline stage (fetching, enrichment, and final data load into DuckDB).
 
@@ -85,27 +85,27 @@ You can use DuckDB’s Python API or the DuckDB CLI to run queries on the tables
 
 ### Python Query
 
-    ```python
-    import duckdb
-    conn = duckdb.connect('enriched_data.duckdb')
-    df = conn.execute("SELECT * FROM users LIMIT 10").fetchdf()
-    print(df)
-    ```
+```python
+import duckdb
+conn = duckdb.connect('enriched_data.duckdb')
+df = conn.execute("SELECT * FROM users LIMIT 10").fetchdf()
+print(df)
+```
 
 ### DuckDB CLI Query
 
 1.	Open the Terminal in VS Code or your system terminal.
 2.	Install DuckDB by running:
 
-    ```bash
-    brew install duckdb
-    ```
+```bash
+brew install duckdb
+```
 
 Once the DuckDB CLI is installed, you can query the enriched_data.duckdb database in interactive mode or within one line. Below is an example of a one-liner query:
 
-    ```bash
-    duckdb enriched_data.duckdb "SELECT * FROM users LIMIT 10;"
-    ```
+```bash
+duckdb enriched_data.duckdb "SELECT * FROM users LIMIT 10;"
+```
 
 
 ## Project Design Documents
@@ -120,6 +120,6 @@ Once the DuckDB CLI is installed, you can query the enriched_data.duckdb databas
 
 After committing all changes, you can create a Git bundle containing the entire repository ready for review with:
 
-    ```bash
-    git bundle create data_pipeline_project.bundle --all
-    ```
+```bash
+git bundle create data_pipeline_project.bundle --all
+```
