@@ -111,9 +111,7 @@ duckdb enriched_data.duckdb "SELECT * FROM users LIMIT 10;"
 ## Project Design Documents
 
 - ERD: See design/ERD.md for the database Entity-Relationship Diagram in Mermaid code.
-- ERD .png Diagaram: See design/mermaid-etl-diagram.png for a visualization of the Mermaid diagram for batch ETL.
-- Real-Time Architecture: See design/realtime_architecture.md for the cloud-native streaming architecture design on GCP.
-- Real-Time Architecture .png Diagram: See design/mermaid-cloud-arch-diagram.png for a visualization of the Mermaid diagram for streaming architecture.
+- Real-Time Architecture: See design/realtime_architecture.md for the cloud-native streaming architecture design and promotion flow on GCP.
 
 
 ## Creating a Git Bundle

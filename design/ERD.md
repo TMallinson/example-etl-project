@@ -33,5 +33,3 @@ erDiagram
     USERS ||--|| COMPANIES : "employed by"
     LOCATIONS ||--|| WEATHER : "weather info for"
 ```
-
-I pasted this code into the [Mermaid Live Editor](https://mermaid.live/) and then exported the diagram as an image that I saved in the same directory as this file.
