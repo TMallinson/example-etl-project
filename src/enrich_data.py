@@ -51,11 +51,10 @@ def enrich_user_record(user: dict) -> dict:
     Returns:
         The enriched user record as a dictionary.
     """
-    # Extract latitude and longitude from the nested JSON (as strings, convert to float)
     try:
-        coords = user.get("location.coordinates", {})
-        lat = float(coords.get("latitude"))
-        lon = float(coords.get("longitude"))
+        # Access flattened keys directly
+        lat = float(user.get("location.coordinates.latitude"))
+        lon = float(user.get("location.coordinates.longitude"))
     except (ValueError, TypeError):
         lat = lon = None
 

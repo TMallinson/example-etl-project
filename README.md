@@ -8,8 +8,8 @@ This project provides a Python-based ETL pipeline that integrates user data with
 - **Batch Pipeline:**  
   - Fetch 500 user records from [RandomUser API](https://randomuser.me/api/?results=500)
   - Retrieve current weather details (using [Open-Meteo API](https://api.open-meteo.com/v1/forecast)) by extracting geographic coordinates.
-  - Enrich user records with weather and randomly generated company data.
-  - Persist enriched data in DuckDB with a normalized schema.
+  - Enrich user records with weather and randomly generated company data using [Faker](https://faker.readthedocs.io/en/master/).
+  - Store enriched data in DuckDB with a normalized schema.
 
 - **Real-Time Production Design (Design Document):**  
   - An architecture built for a GCP environment focusing on low-latency ingestion, high availability, and fault tolerance.
@@ -56,9 +56,9 @@ python3 src/etl_pipeline.py
 ```
 
 This script will:
-	- Fetch user data.
-	- Enrich it with weather and company information.
-	- Store the enriched data in a DuckDB database file (enriched_data.duckdb).
+- Fetch user data.
+- Enrich it with weather and company information.
+- Store the enriched data in a DuckDB database file (enriched_data.duckdb).
 
 2.	**Testing and Visualization:**
 
@@ -76,10 +76,10 @@ The test script prints sample data from each pipeline stage (fetching, enrichmen
 ### Tables Overview
 
 Table Descriptions:
-	- USERS: Contains basic user data including name, contact information, and foreign keys to the location and company.
-	- LOCATIONS: Stores geographic coordinates.
-	- COMPANIES: Contains randomly generated company details.
-	- WEATHER: Stores the current weather details; each record is linked to a location.
+- USERS: Contains basic user data including name, contact information, and foreign keys to the location and company.
+- LOCATIONS: Stores geographic coordinates.
+- COMPANIES: Contains randomly generated company details.
+- WEATHER: Stores the current weather details; each record is linked to a location.
 
 You can use DuckDB’s Python API or the DuckDB CLI to run queries on the tables.
 
@@ -110,10 +110,10 @@ duckdb enriched_data.duckdb "SELECT * FROM users LIMIT 10;"
 
 ## Project Design Documents
 
-    - ERD: See design/ERD.md for the database Entity-Relationship Diagram in Mermaid code.
-    - ERD .png Diagaram: See design/mermaid-etl-diagram.png for a visualization of the Mermaid diagram for batch ETL.
-	- Real-Time Architecture: See design/realtime_architecture.md for the cloud-native streaming architecture design on GCP.
-    - Real-Time Architecture .png Diagram: See design/mermaid-cloud-arch-diagram.png for a visualization of the Mermaid diagram for streaming architecture.
+- ERD: See design/ERD.md for the database Entity-Relationship Diagram in Mermaid code.
+- ERD .png Diagaram: See design/mermaid-etl-diagram.png for a visualization of the Mermaid diagram for batch ETL.
+- Real-Time Architecture: See design/realtime_architecture.md for the cloud-native streaming architecture design on GCP.
+- Real-Time Architecture .png Diagram: See design/mermaid-cloud-arch-diagram.png for a visualization of the Mermaid diagram for streaming architecture.
 
 
 ## Creating a Git Bundle
