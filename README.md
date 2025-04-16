@@ -21,7 +21,7 @@ This project provides a Python-based ETL pipeline that integrates user data with
 1. **Clone the repository:**
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/TMallinson/example-etl-project.git
    cd data_pipeline_project
    ```
 
